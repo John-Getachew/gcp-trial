@@ -33,5 +33,5 @@ jobs:
           GCP_PROJECT: ${{ secrets.GCP_PROJECT_DEFAULT }}
         run: |
           gcloud auth configure-docker \us-central1-docker.pkg.dev
-          docker build -t us-central1-docker.pkg.dev/$GCP_PROJECT/live-interactive-games/backend:latest .
-          docker push us-central1-docker.pkg.dev/$GCP_PROJECT/live-interactive-games/backend:latest
+          docker build -t us-central1-docker.pkg.dev/$GCP_PROJECT/gcp-trial/backend:latest .
+          docker push us-central1-docker.pkg.dev/$GCP_PROJECT/gcp-trial/backend:latest
