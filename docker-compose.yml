@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  backend:
+    image: us-central1-docker.pkg.dev/avian-lane-419209/live-interactive-games/backend:latest
+    ports:
+      - 3000:3000
+  watchtower:
+    image: containrrr/watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: --interval 30 --cleanup
+    environment:
+      - WATCHTOWER_LABEL_ENABLE=true
+      - WATCHTOWER_MONITOR_ONLY=false
+    labels:
+      - 'com.centurylinklabs.watchtower.enable=true'
